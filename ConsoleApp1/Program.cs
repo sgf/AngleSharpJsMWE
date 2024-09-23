@@ -12,7 +12,7 @@ internal class Program
         var configWithJs = Configuration.Default
             .WithJs()
     //.Without<JsNavigationHandler>()
-    .WithDefaultLoader()
+    .WithDefaultLoader(/*new AngleSharp.Io.LoaderOptions() { IsNavigationDisabled = false }*/)
         //.With(service)
     .WithConsoleLogger(ctx => new MyConsoleLogger(ctx));
 
@@ -60,7 +60,7 @@ public class MyConsoleLogger : IConsoleLogger
 
     public void Log(object[] values)
     {
-        Trace.WriteLine("错误:");
+        Trace.WriteLine("Error:");
         Trace.WriteLine(values);
     }
 }
