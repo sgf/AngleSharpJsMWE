@@ -36,10 +36,13 @@ internal class Program
         var docLocation = docOrg.Location;
 
         var locationFromDocScript = docOrg.ExecuteScript("location;");
-        var locationFromActDocScrip = docOrg.ExecuteScript("location;");
+        var locationFromActDocScrip = actDoc.ExecuteScript("location;");
 
         //i hope any of (actDocUrl,actDocLocation,docUrl,docLocation,locationFromDocScript,locationFromActDocScrip)'s value should be is thread-189739-1-1.html?_dsign=9ffd9d54
         //because if open Redirect.Html in the broswer will redirect to  thread-189739-1-1.html?_dsign=9ffd9d54
+
+        // But now AngleSharp.Js and browsers seems have different behaviors.
+
         Console.WriteLine("Hello, World!");
         Console.ReadLine();
     }
